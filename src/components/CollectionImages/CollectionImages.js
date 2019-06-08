@@ -37,6 +37,7 @@ export default function CollectionImages({
           Close
         </button>
       </div>
+
       {images && (
         <div className="collection-images__content">
           {images.map(image => (

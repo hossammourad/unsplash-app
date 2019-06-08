@@ -9,20 +9,20 @@ export default function PhotoCredit({ user }) {
     <div className="photo-credit" data-testid="photo-credit">
       <span className="display-block">
         <FontAwesomeIcon icon={faUser} className="margin-right-base" />
-        <b>{user.name}</b>
+        <b data-testid="photo-credit-name">{user.name}</b>
       </span>
 
-      {user.bio && <p>"{user.bio}"</p>}
+      {user.bio && <p data-testid="photo-credit-bio">"{user.bio}"</p>}
 
       {user.instagram_username && (
-        <span className="display-block">
+        <span className="display-block" data-testid="photo-credit-instagram">
           <FontAwesomeIcon icon={faInstagram} />{' '}
           <a href={`https://instagram.com/${user.instagram_username}`}>{user.instagram_username}</a>
         </span>
       )}
 
       {user.twitter_username && (
-        <span className="display-block">
+        <span className="display-block" data-testid="photo-credit-twitter">
           <FontAwesomeIcon icon={faTwitter} />{' '}
           <a href={`https://twitter.com/${user.twitter_username}`}>{user.twitter_username}</a>
         </span>
@@ -34,7 +34,6 @@ export default function PhotoCredit({ user }) {
 PhotoCredit.propTypes = {
   user: shape({
     name: string.isRequired,
-    locaiton: string,
     bio: string,
     instagram_username: string,
     twitter_username: string

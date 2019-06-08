@@ -31,6 +31,7 @@ export default function Window({ updatePhotoCreditData, updateFeaturedCollection
         <span className="btn btn-mini">Mini</span>
         <span className="btn btn-expand">Expand</span>
       </div>
+
       <div className="edit-content">
         <p>Hi! welcome to your virtual desktop</p>
         <p>You can use this app to change your virtual desktop wallpaper!</p>
