@@ -9,17 +9,22 @@ export default function FeaturedCollections({
   return (
     <div className="featured-collections animated bounceInRight">
       <div className="margin-bottom-double">
-        <button className="button" onClick={() => updateFeaturedCollections(null)}>
+        <button
+          className="button"
+          onClick={() => updateFeaturedCollections(null)}
+          data-testid="featured-collections-close"
+        >
           Close
         </button>
       </div>
 
       {collections.map(collection => (
         <div
+          key={collection.id}
           className="featured-collections__single"
           style={{ backgroundImage: `url(${collection.cover_photo.urls.small})` }}
-          key={collection.id}
           onClick={() => updateSelectedFeaturedCollectionId(collection.id)}
+          data-testid={`featured-collection-${collection.id}`}
         >
           <h3>
             {collection.title} ({collection.total_photos})
@@ -35,6 +40,7 @@ FeaturedCollections.propTypes = {
   updateSelectedFeaturedCollectionId: func.isRequired,
   collections: arrayOf(
     shape({
+      id: number.isRequired,
       title: string.isRequired,
       total_photos: number.isRequired,
       cover_photo: shape({

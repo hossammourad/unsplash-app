@@ -5,7 +5,8 @@ import axios from 'axios';
 export default function CollectionImages({
   collectionId,
   updateCollectionId,
-  updatePhotoCreditData
+  updatePhotoCreditData,
+  updateFeaturedCollections
 }) {
   const [images, updateImages] = useState(null);
 
@@ -26,7 +27,13 @@ export default function CollectionImages({
   return (
     <div className="collection-images">
       <div className="margin-bottom-double">
-        <button className="button" onClick={() => updateCollectionId(null)}>
+        <button
+          className="button"
+          onClick={() => {
+            updateCollectionId(null);
+            updateFeaturedCollections(null);
+          }}
+        >
           Close
         </button>
       </div>
@@ -49,5 +56,6 @@ export default function CollectionImages({
 CollectionImages.propTypes = {
   collectionId: number.isRequired,
   updateCollectionId: func.isRequired,
-  updatePhotoCreditData: func.isRequired
+  updatePhotoCreditData: func.isRequired,
+  updateFeaturedCollections: func.isRequired
 };

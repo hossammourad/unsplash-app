@@ -33,6 +33,7 @@ export default function App() {
           collectionId={selectedFeaturedCollectionId}
           updateCollectionId={updateSelectedFeaturedCollectionId}
           updatePhotoCreditData={updatePhotoCreditData}
+          updateFeaturedCollections={updateFeaturedCollections}
         />
       )}
     </Fragment>
