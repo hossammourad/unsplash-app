@@ -39,7 +39,7 @@ export default function CollectionImages({
       </div>
 
       {images && (
-        <div className="collection-images__content">
+        <div className="collection-images__content" data-testid="collection-images">
           {images.map(image => (
             <img
               key={image.id}

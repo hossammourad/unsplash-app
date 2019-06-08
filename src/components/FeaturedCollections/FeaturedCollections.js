@@ -7,7 +7,7 @@ export default function FeaturedCollections({
   collections
 }) {
   return (
-    <div className="featured-collections animated bounceInRight">
+    <div className="featured-collections animated bounceInRight" data-testid="featured-collections">
       <div className="margin-bottom-double">
         <button
           className="button"

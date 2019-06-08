@@ -43,7 +43,11 @@ export default function Window({ updatePhotoCreditData, updateFeaturedCollection
           Random
         </button>
         <br />
-        <button className="button" onClick={() => getFeaturedCollections()}>
+        <button
+          className="button"
+          onClick={() => getFeaturedCollections()}
+          data-testid="select-from-featured-images"
+        >
           Select From Featured Images
         </button>
       </div>
