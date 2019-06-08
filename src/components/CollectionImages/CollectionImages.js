@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { number, func } from 'prop-types';
 import axios from 'axios';
+import { CLIENT_KEY } from '../../config';
 
 export default function CollectionImages({
   collectionId,
@@ -13,7 +14,7 @@ export default function CollectionImages({
   useEffect(() => {
     axios
       .get(
-        `https://api.unsplash.com/collections/${collectionId}/photos?per_page=25&client_id=76ea967f06acc4fc0e20f384ec0b987d64dc71dc92c47c5546301ea4a2fc366a`
+        `https://api.unsplash.com/collections/${collectionId}/photos?per_page=25&client_id=${CLIENT_KEY}`
       )
       .then(result => updateImages(result.data))
       .catch(error => console.error(error));

@@ -1,13 +1,12 @@
 import React from 'react';
 import { func } from 'prop-types';
 import axios from 'axios';
+import { CLIENT_KEY } from '../../config';
 
 export default function Window({ updatePhotoCreditData, updateFeaturedCollections }) {
   const getRandomImage = () => {
     axios
-      .get(
-        `https://api.unsplash.com/photos/random?client_id=76ea967f06acc4fc0e20f384ec0b987d64dc71dc92c47c5546301ea4a2fc366a`
-      )
+      .get(`https://api.unsplash.com/photos/random?client_id=${CLIENT_KEY}`)
       .then(result => {
         document.body.style.backgroundImage = `url(${result.data.urls.full})`;
         updatePhotoCreditData(result.data.user);
@@ -17,9 +16,7 @@ export default function Window({ updatePhotoCreditData, updateFeaturedCollection
 
   const getFeaturedCollections = () => {
     axios
-      .get(
-        `https://api.unsplash.com/collections/featured?client_id=76ea967f06acc4fc0e20f384ec0b987d64dc71dc92c47c5546301ea4a2fc366a`
-      )
+      .get(`https://api.unsplash.com/collections/featured?client_id=${CLIENT_KEY}`)
       .then(result => updateFeaturedCollections(result.data))
       .catch(error => console.error(error));
   };

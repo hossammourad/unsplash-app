@@ -17,11 +17,13 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run cypress-open`
 
-Launches Cypress GUI so you can run the Cypress tests manually
+Launches Cypress GUI so you can run the Cypress tests manually<br>
+Note: the app should be running before running the Cypress tests.
 
 ### `npm run cypress-run`
 
-Runs Cypress tests in CLI mode
+Runs Cypress tests in CLI mode<br>
+Note: the app should be running before running the Cypress tests.
 
 ### `npm run build`
 
