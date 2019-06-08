@@ -2,7 +2,7 @@ import React from 'react';
 import { func } from 'prop-types';
 import axios from 'axios';
 
-export default function Window({ updatePhotoCreditData }) {
+export default function Window({ updatePhotoCreditData, updateFeaturedCollections }) {
   const getRandomImage = () => {
     axios
       .get(
@@ -12,6 +12,15 @@ export default function Window({ updatePhotoCreditData }) {
         document.body.style.backgroundImage = `url(${result.data.urls.full})`;
         updatePhotoCreditData(result.data.user);
       })
+      .catch(error => console.error(error));
+  };
+
+  const getFeaturedCollections = () => {
+    axios
+      .get(
+        `https://api.unsplash.com/collections/featured?client_id=76ea967f06acc4fc0e20f384ec0b987d64dc71dc92c47c5546301ea4a2fc366a`
+      )
+      .then(result => updateFeaturedCollections(result.data))
       .catch(error => console.error(error));
   };
 
@@ -25,8 +34,16 @@ export default function Window({ updatePhotoCreditData }) {
       <div className="edit-content">
         <p>Hi! welcome to your virtual desktop</p>
         <p>You can use this app to change your virtual desktop wallpaper!</p>
-        <button className="button" onClick={() => getRandomImage()} data-testid="random-wallpaper">
+        <button
+          className="button margin-bottom-double"
+          onClick={() => getRandomImage()}
+          data-testid="random-wallpaper"
+        >
           Random
+        </button>
+        <br />
+        <button className="button" onClick={() => getFeaturedCollections()}>
+          Select From Featured Images
         </button>
       </div>
     </div>
@@ -34,5 +51,6 @@ export default function Window({ updatePhotoCreditData }) {
 }
 
 Window.propTypes = {
-  updatePhotoCreditData: func.isRequired
+  updatePhotoCreditData: func.isRequired,
+  updateFeaturedCollections: func.isRequired
 };

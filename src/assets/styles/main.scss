@@ -1,3 +1,5 @@
+@import './vendors/animate.scss';
+
 @import './base/reset';
 @import './base/variables';
 @import './base/colors';
@@ -9,3 +11,4 @@
 @import './components/status-bar';
 @import './components/window';
 @import './components/photo-credit';
+@import './components/featured-collections';
