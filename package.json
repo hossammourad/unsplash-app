@@ -39,6 +39,13 @@
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
     "cypress": "^3.3.1",
+    "husky": "^2.4.0",
     "jest-dom": "^3.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "react-scripts test --watchAll=false",
+      "pre-push": "react-scripts test --watchAll=false"
+    }
   }
 }
