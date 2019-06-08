@@ -1,0 +1,11 @@
+.status-bar {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 3px 20px;
+  color: $white;
+
+  &__app-name {
+    margin-left: $base-spacing-unit * 4;
+    margin-right: $base-spacing-unit * 4;
+    font-weight: bold;
+  }
+}

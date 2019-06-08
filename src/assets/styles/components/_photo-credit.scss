@@ -1,0 +1,16 @@
+.photo-credit {
+  position: fixed;
+  left: $double-spacing-unit;
+  bottom: $double-spacing-unit;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: $double-spacing-unit;
+  border-radius: $border-radius-base;
+  color: $white;
+  font-size: $font-size-small;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+}
