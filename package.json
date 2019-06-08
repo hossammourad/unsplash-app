@@ -19,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "integration-test-open": "./node_modules/cypress/bin/cypress open",
-    "integration-test-run": "./node_modules/cypress/bin/cypress run"
+    "cypress-open": "./node_modules/cypress/bin/cypress open",
+    "cypress-run": "./node_modules/cypress/bin/cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,7 +46,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "react-scripts test --watchAll=false",
-      "pre-push": "npm run integration-test-run"
+      "pre-push": "npm run cypress-run"
     }
   }
 }
