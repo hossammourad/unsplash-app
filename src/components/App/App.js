@@ -3,6 +3,7 @@ import StatusBar from '../StatusBar/StatusBar';
 import Window from '../Window/Window';
 import PhotoCredit from '../PhotoCredit/PhotoCredit';
 import FeaturedCollections from '../FeaturedCollections/FeaturedCollections';
+import CollectionImages from '../CollectionImages/CollectionImages';
 
 export default function App() {
   const [photoCreditData, updatePhotoCreditData] = useState(null);
@@ -19,11 +20,19 @@ export default function App() {
 
       {photoCreditData && <PhotoCredit user={photoCreditData} />}
 
-      {featuredCollections && (
+      {featuredCollections && !selectedFeaturedCollectionId && (
         <FeaturedCollections
           updateFeaturedCollections={updateFeaturedCollections}
           updateSelectedFeaturedCollectionId={updateSelectedFeaturedCollectionId}
           collections={featuredCollections}
+        />
+      )}
+
+      {selectedFeaturedCollectionId && (
+        <CollectionImages
+          collectionId={selectedFeaturedCollectionId}
+          updateCollectionId={updateSelectedFeaturedCollectionId}
+          updatePhotoCreditData={updatePhotoCreditData}
         />
       )}
     </Fragment>
