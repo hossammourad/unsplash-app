@@ -16,7 +16,7 @@ export default function Window({ updatePhotoCreditData }) {
   };
 
   return (
-    <div className="window">
+    <div className="window" data-testid="app-window">
       <div className="window__controls">
         <span className="btn btn-close">Close</span>
         <span className="btn btn-mini">Mini</span>
@@ -25,7 +25,7 @@ export default function Window({ updatePhotoCreditData }) {
       <div className="edit-content">
         <p>Hi! welcome to your virtual desktop</p>
         <p>You can use this app to change your virtual desktop wallpaper!</p>
-        <button className="button" onClick={() => getRandomImage()}>
+        <button className="button" onClick={() => getRandomImage()} data-testid="random-wallpaper">
           Random
         </button>
       </div>

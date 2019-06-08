@@ -4,10 +4,9 @@ import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function StatusBar() {
   return (
-    <header className="status-bar">
+    <header className="status-bar" data-testid="status-bar">
       <FontAwesomeIcon icon={faAppleAlt} />
       <span className="status-bar__app-name">Unsplash</span>
-      <span>About</span>
     </header>
   );
 }

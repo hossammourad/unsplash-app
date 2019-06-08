@@ -6,7 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 export default function PhotoCredit({ user }) {
   return (
-    <div className="photo-credit">
+    <div className="photo-credit" data-testid="photo-credit">
       <span className="display-block">
         <FontAwesomeIcon icon={faUser} className="margin-right-base" />
         <b>{user.name}</b>
